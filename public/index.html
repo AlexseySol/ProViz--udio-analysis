@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналіз аудіо дзвінків</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Аналіз аудіо дзвінків 🎧</h1>
+        
+        <div class="input-group">
+            <label for="file-input" class="file-label">📁 Додати аудіо</label>
+            <input type="file" id="file-input" accept="audio/*,.m4a,.mp3,.wav,.aac" class="file-input">
+        </div>
+        
+        <div class="input-group">
+            <label for="date">📅 Дата та час:</label>
+            <input type="text" id="date" name="date" placeholder="ДД.ММ.РРРР ГГ:ХХ" required pattern="\d{2}\.\d{2}\.\d{4} \d{2}:\d{2}">
+        </div>
+        
+        <div class="input-group">
+            <label for="phone">📞 Номер телефону:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+380XXXXXXXXX" required pattern="\+380\d{9}">
+        </div>
+        
+        <div class="input-group">
+            <label for="manager-select">👨‍💼 Виберіть менеджера:</label>
+            <select id="manager-select" name="manager" required>
+                <option value="">Виберіть менеджера</option>
+                <option value="Наталия">Наталія</option>
+                <option value="Алексей">Олексій</option>
+                <option value="Анжела">Анжела</option>
+                <option value="Артем">Артем</option>
+                <option value="Анна">Анна</option>
+            </select>
+        </div>
+        
+        <div class="button-group">
+            <button id="analyze-button" class="button button-primary" disabled>🔍 Аналізувати</button>
+            <button id="send-to-sheet-button" class="button button-secondary" disabled>📊 Відправити в Google Таблицю</button>
+        </div>
+        
+        <div id="status" aria-live="polite"></div>
+        <div id="result" aria-live="polite"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
